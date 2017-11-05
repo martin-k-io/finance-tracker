@@ -28,8 +28,6 @@ class Stock < ActiveRecord::Base
     'Unavailable'
   end
 
-
-
   private
     def self.api_lookup(ticker_symbol)
       # Use net/http to access the API
