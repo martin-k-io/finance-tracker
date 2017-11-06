@@ -21,7 +21,7 @@
       <% if @stock.name %>
         <strong>Name:</strong> @stock.name
       <% end %>
-      <strong>Price:</strong> <%= @stock.price %>
+      <strong>Price:</strong> <i class="fa fa-usd"></i><%= @stock.price %>
       <% if current_user.can_add_stock?(@stock.ticker) %>
         <%= link_to "Add to my Stocks", user_stocks_path(user: current_user, 
                   stock_ticker: @stock.ticker, 
