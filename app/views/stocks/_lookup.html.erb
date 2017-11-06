@@ -19,7 +19,7 @@
     <div id="stock-lookup-results" class="well results-block">
       <strong>Symbol:</strong> <%= @stock.ticker %>
       <% if @stock.name %>
-        <strong>Name:</strong> @stock.name
+        <strong>Name:</strong> <%= @stock.name %>
       <% end %>
       <strong>Price:</strong> <i class="fa fa-usd"></i><%= @stock.price %>
       <% if current_user.can_add_stock?(@stock.ticker) %>
