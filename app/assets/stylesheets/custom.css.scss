@@ -2,6 +2,50 @@
 @import "bootstrap";
 @import "font-awesome";
 
+
+body {
+  margin: 0 !important;
+}
+
+* {
+  font-family: "Helvetica", Courier, monospace;
+}
+
 .results-block {
   display: inline-block;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.left-padding {
+  padding-left: 15px !important;
+}
+
+.logout {
+  margin-top: 3px;
+
+  a {
+    padding-left: 0;
+    color: #FFF;
+  }
+
+  .btn{
+    color: #fff !important;
+    margin-top: 5%;
+  }
+  .btn-danger:hover {
+    background-color: darken(#D9534F, 20%) !important;
+  }
+}
+
+.user-name {
+  padding-top: 15px;
+}
+
+.navbar-nav li a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
 }
