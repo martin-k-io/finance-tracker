@@ -55,19 +55,21 @@ class Stock < ActiveRecord::Base
         # Get the actual historical data
         historical_data = data['Time Series (1min)']
 
-        # Get the most recent data
-        recent_data = historical_data.first
-        # The actual data has is in the second item
-        recent_data = recent_data.second
+        if historical_data
+          # Get the most recent data
+          recent_data = historical_data.first
+          # The actual data has is in the second item
+          recent_data = recent_data.second
 
-        # Extract desired information into a struct to avoid hash notation
-        OpenStruct.new({
-          open: recent_data['1. open'].try(:to_f),
-          close: recent_data['4. close'].try(:to_f),
-          symbol: data['Meta Data']["2. Symbol"]
-        })
-      rescue Error => e 
-        nil  
+          # Extract desired information into a struct to avoid hash notation
+          OpenStruct.new({
+            open: recent_data['1. open'].try(:to_f),
+            close: recent_data['4. close'].try(:to_f),
+            symbol: data['Meta Data']["2. Symbol"]
+          })
+        else
+          nil
+        end
       # Rescue any network related errors
       rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
         Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
