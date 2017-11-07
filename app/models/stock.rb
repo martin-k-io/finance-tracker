@@ -66,6 +66,8 @@ class Stock < ActiveRecord::Base
           close: recent_data['4. close'].try(:to_f),
           symbol: data['Meta Data']["2. Symbol"]
         })
+      rescue Error => e 
+        nil  
       # Rescue any network related errors
       rescue Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
         Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
