@@ -12,8 +12,8 @@ This is a finance tracker app implementing the theory from the "Complete RoR Dev
 Tech specs
 ----------
 
-Ruby version: 2.3.1
-Rails verions: 5.1.4
-Hosting platform: Heroku
+* Ruby version: 2.3.1
+* Rails version: 5.1.4
+* Hosting platform: Heroku
 
 [Live preview](http://finance-tracker-martink.herokuapp.com/)
